@@ -269,11 +269,23 @@ button:hover {
 }
 
 .header-img{
-    background-image: url(IMG/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    
     height: 300px;
     width: 100%;
     background-size: cover;
     background-position: center;
+}
+.restau1{
+    background-image: url(IMG/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.restau2{
+    background-image: url(IMG/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+.restau3{
+    background-image: url(IMG/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+.restau4{
+    background-image: url(IMG/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 
 /**Menu**/
@@ -375,6 +387,12 @@ to{
     animation-duration: 3s;
     animation-name: appear;
     animation-delay: 500ms;
+    animation-fill-mode: backwards;
+}
+.choice1.appear4{
+    animation-duration: 3s;
+    animation-name: appear;
+    animation-delay: 700ms;
     animation-fill-mode: backwards;
 }
 .choice1 h3 {
