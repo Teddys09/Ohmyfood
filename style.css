@@ -2,7 +2,10 @@
 
 body {
     font-family: Roboto,sans-serif;
-    margin: 0px;   
+    margin: auto;
+    min-width: 275px;
+    max-width: 1190px;
+
 }
 .logo{
     font-family:Shrikhand,sans-serif;
@@ -251,6 +254,20 @@ button:hover {
 /**Page Menu **/
 
 /**Header**/
+.header-title.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.header-title.page i{
+    position: absolute;
+    left: 10px;
+    font-size: 25px;
+    color: black;
+    top: 12px;
+}
+
 .header-img{
     background-image: url(IMG/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
     height: 300px;
@@ -275,7 +292,7 @@ button:hover {
 }
 .menu-titre i{
     position: absolute;
-    right: 18px;
+    right: 0px;
     top: 10px;
     font-size: 23px;
     color: black;
@@ -291,15 +308,22 @@ button:hover {
     cursor: pointer; 
 }
 
-/** Entrées **/
+/** Entrées Plats Désserts **/
+.menu-content{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
 .entrées-flex{
     display: flex;
     flex-wrap: wrap;
+    max-width: 350px;
 }
 .name-choice{
     margin-left: 5px;
     position: relative;
     width: 100%;
+    margin-bottom: 30px;
 }
 .name-choice::before{
     content: "";
@@ -309,6 +333,17 @@ button:hover {
     width: 42px;
     background-color: #99E2D0;
     bottom: -10px;
+}
+@keyframes appear {
+    
+from{
+   transform:translateY(50%);
+   opacity: 0;
+}
+to{
+    transform:translateY(0);
+    opacity: 1;
+}
 }
 .choice1{
     display: flex;
@@ -320,6 +355,27 @@ button:hover {
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 18px;
+    
+    
+}
+.choice1.appear1{
+    animation-duration: 3s;
+    animation-name: appear;
+    animation-delay: 100ms;
+    animation-fill-mode: backwards;
+}
+.choice1.appear2{
+    animation-duration: 3s;
+    animation-name: appear;
+    animation-delay: 300ms;
+    animation-fill-mode: backwards;
+}
+.choice1.appear3{
+    animation-duration: 3s;
+    animation-name: appear;
+    animation-delay: 500ms;
+    animation-fill-mode: backwards;
 }
 .choice1 h3 {
     width: 100%;
@@ -349,18 +405,20 @@ button:hover {
 .check-mark{
     background: #99E2D0;
     height: 100%;
-    width: 50px;
+    width: 60px;
+    min-width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0px 12px 12px 0;
-    margin-right: -50px;
+    margin-right: -60px;
     margin-left: 20px;
+    transition: 500ms;
 }
 .check-mark .fa-solid{
     background: white;
     border-radius: 12px;
-    padding: 2px;
+    padding: 3px;
     font-size: 15px;
     color: #99E2D0;
 }
@@ -369,10 +427,75 @@ button:hover {
 }
 .choice1:hover .check-mark {
     margin-right: 0px;
-    transition: 500ms;
+    transition: all 500ms;
 }
 .choice1:hover .check-mark .fa-solid{
     transform: rotate(180deg);
     transform: rotate(360deg);
     transition: 500ms;
+}
+
+@media (max-width:798px){
+    .entrées-flex{
+        max-width: fit-content;
+    }
+    .menu-content{
+        display: block;
+    }
+}
+
+/** Button **/
+.button-menu{
+    text-align: center;
+
+}
+.button-commander{
+    border-radius: 30px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(180deg, #FF79DA , #9356DC );
+    border: 0px;
+    padding: 14px 47px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+/**Loader**/
+@keyframes disapear{
+    from{
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    to{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+.loading{
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    animation: disapear 3s;
+    animation-fill-mode: backwards;
+    animation-fill-mode: forwards;
+}
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.loading::before{
+    content: "";
+    z-index: 2;
+    background-color: #9356DC;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    animation: spin 3s;
 }
