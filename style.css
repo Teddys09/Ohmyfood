@@ -2,10 +2,8 @@
 
 body {
     font-family: Roboto,sans-serif;
-    margin: auto;
+    margin: 0;
     min-width: 275px;
-    max-width: 1190px;
-
 }
 .logo{
     font-family:Shrikhand,sans-serif;
@@ -119,7 +117,7 @@ button:hover {
         margin: 0px 10px;
     }
     .fonctionnement {
-        margin: 0px 5px 35px 5px;
+        padding: 15px;
     }
     .fonctionnement h2 {
         text-align: start;
@@ -129,7 +127,7 @@ button:hover {
 /**Restaurants-Accueil**/
 .restaurants-lien{
     background-color: #f7f7f7;
-    padding: 10px;
+    padding: 15px;
     padding-bottom: 65px;
 }
 .main-card-restaurants{
@@ -229,7 +227,7 @@ button:hover {
 /**Footer**/
 .footer{
     background:#000000cc;
-    padding: 10px 0 10px 10px;
+    padding: 15px;
     
 }
 .footer p{
@@ -301,11 +299,12 @@ button:hover {
 .menu-titre h2{
     font-family: Shrikhand,sans-serif;
     margin: 0px;
+    margin-left: 5px;
 }
 .menu-titre i{
     position: absolute;
-    right: 0px;
-    top: 10px;
+    left: 270px;
+    top: 4px;
     font-size: 23px;
     color: black;
 }
@@ -325,11 +324,12 @@ button:hover {
     display: flex;
     gap: 20px;
     justify-content: center;
+    align-items: flex-start;
 }
 .entrées-flex{
     display: flex;
     flex-wrap: wrap;
-    max-width: 350px;
+    max-width: 31%;
 }
 .name-choice{
     margin-left: 5px;
@@ -476,6 +476,7 @@ to{
     padding: 14px 47px;
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
     font-family: 'Roboto', 'sans-serif';
+    margin: 25px 0 40px 0;
 }
 
 /**Loader**/
